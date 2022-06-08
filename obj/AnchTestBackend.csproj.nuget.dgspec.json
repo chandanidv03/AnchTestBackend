@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Darshan\\source\\MVCdemos\\AnchTestBackend\\AnchTestBackend\\AnchTestBackend.csproj": {}
+    "/Users/darshan/Chandani/AnchTestDemo/AnchTestBackend/AnchTestBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Darshan\\source\\MVCdemos\\AnchTestBackend\\AnchTestBackend\\AnchTestBackend.csproj": {
+    "/Users/darshan/Chandani/AnchTestDemo/AnchTestBackend/AnchTestBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Darshan\\source\\MVCdemos\\AnchTestBackend\\AnchTestBackend\\AnchTestBackend.csproj",
+        "projectUniqueName": "/Users/darshan/Chandani/AnchTestDemo/AnchTestBackend/AnchTestBackend.csproj",
         "projectName": "AnchTestBackend",
-        "projectPath": "C:\\Users\\Darshan\\source\\MVCdemos\\AnchTestBackend\\AnchTestBackend\\AnchTestBackend.csproj",
-        "packagesPath": "C:\\Users\\Darshan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Darshan\\source\\MVCdemos\\AnchTestBackend\\AnchTestBackend\\obj\\",
+        "projectPath": "/Users/darshan/Chandani/AnchTestDemo/AnchTestBackend/AnchTestBackend.csproj",
+        "packagesPath": "/Users/darshan/.nuget/packages/",
+        "outputPath": "/Users/darshan/Chandani/AnchTestDemo/AnchTestBackend/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Darshan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/darshan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +41,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.5, )"
@@ -77,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }
