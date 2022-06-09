@@ -1,6 +1,5 @@
 ﻿using AnchTestBackend.Data;
 using AnchTestBackend.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,17 +22,30 @@ namespace AnchTestBackend.Controllers
         }
 
         [HttpGet("filterUsers")]
-        public async Task<ActionResult<IEnumerable<User>>> GetFilteredUsers([FromQuery] User parameter)
+        public async Task<ActionResult<IEnumerable<User>>> GetFilteredUsers([FromQuery] FilterModel parameter)
         {
             if (_context == null)
                 return NotFound();
 
-            var userData = await _context.Data.Where(x => (x.Role == parameter.Role
-                                                     || x.JobTitle == parameter.JobTitle
-                                                     || x.OrganisationUnit == parameter.OrganisationUnit
-                                                     || x.FirstName == parameter.FirstName
-                                                     || x.LastName == parameter.LastName
-                                                     || x.Email == parameter.Email)).ToListAsync();
+            var userData = await _context.Data.ToListAsync();
+
+            if (!String.IsNullOrEmpty(parameter.Role)) {
+                userData = userData.Where(x => x.Role.ToLower().Trim() == parameter.Role.ToLower().Trim()).ToList();
+            }
+            if (!String.IsNullOrEmpty(parameter.JobTitle))
+            {
+                userData = userData.Where(x => x.JobTitle.ToLower().Trim() == parameter.JobTitle.ToLower().Trim()).ToList();
+            }
+            if (!String.IsNullOrEmpty(parameter.OrganisationUnit))
+            {
+                userData = userData.Where(x => x.OrganisationUnit == parameter.OrganisationUnit).ToList();
+            }
+            if (!String.IsNullOrEmpty(parameter.FilterText))
+            {
+                userData = userData.Where(x => (x.FirstName.ToLower().Contains(parameter.FilterText.ToLower())
+                                                     || x.LastName.ToLower().Contains(parameter.FilterText.ToLower())
+                                                     || x.Email.ToLower().Contains(parameter.FilterText.ToLower()))).ToList();
+            }
             if (userData == null)
                 return NotFound();
 

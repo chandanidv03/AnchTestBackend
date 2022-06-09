@@ -22,4 +22,12 @@ namespace AnchTestBackend.Models
         [Column("Job title")]
         public string? JobTitle { get; set; }
     }
+
+    public class FilterModel
+    {
+        public string? FilterText { get; set; }
+        public string? Role { get; set; }
+        public string? OrganisationUnit { get; set; }
+        public string? JobTitle { get; set; }
+    }
 }
